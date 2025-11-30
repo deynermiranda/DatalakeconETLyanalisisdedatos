@@ -1,0 +1,62 @@
+Para verificar la tabla creada
+SELECT * FROM 'Nombre_carpeta_creada;
+
+Para ver tablas de mi database
+SHOW TABLES IN 'database';
+
+-- Relación entre temperatura y humedad ---
+SELECT 
+    dispositivo,
+    CORR(temperatura_promedio, humedad_promedio) as correlacion_temp_humedad,
+    CORR(temperatura_promedio, co_promedio) as correlacion_temp_co
+FROM curated_analisis_limpio
+GROUP BY dispositivo;
+
+-- Comportamiento por hora del día ---
+SELECT 
+    device,
+    hour(from_iso8601_timestamp(ts)) as hora,
+    AVG(temp) as temp_promedio,
+    COUNT(*) as lecturas
+FROM processed_meteo
+GROUP BY device, hour(from_iso8601_timestamp(ts))
+ORDER BY device, hora;
+
+-- Evaluar niveles de contaminantes
+SELECT 
+    dispositivo,
+    co_promedio,
+    lpg_promedio,
+    smoke_promedio,
+    CASE 
+        WHEN co_promedio > 0.01 THEN 'ALERTA_CO'
+        WHEN lpg_promedio > 0.01 THEN 'ALERTA_LPG'
+        WHEN smoke_promedio > 0.02 THEN 'ALERTA_SMOKE'
+        ELSE 'AIRE_OK'
+    END as calidad_aire
+FROM curated_analisis_limpio;
+
+-- Encontrar valores atípicos en temperatura
+SELECT 
+    ts,
+    device,
+    temp,
+    CASE 
+        WHEN temp > 28 THEN 'ALTA_TEMPERATURA'
+        WHEN temp < 18 THEN 'BAJA_TEMPERATURA'
+        ELSE 'NORMAL'
+    END as estado
+FROM processed_meteo
+WHERE temp > 28 OR temp < 18
+ORDER BY temp DESC
+LIMIT 10;
+
+-- Resumen general por dispositivo
+SELECT 
+    dispositivo,
+    COUNT(*) as total_registros,
+    AVG(temperatura_promedio) as temp_promedio,
+    AVG(humedad_promedio) as humedad_promedio
+FROM curated_analisis_limpio
+GROUP BY dispositivo
+ORDER BY temp_promedio DESC;
