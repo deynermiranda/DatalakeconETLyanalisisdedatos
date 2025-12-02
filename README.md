@@ -29,4 +29,10 @@ flowchart TD
     L --> N[📱 Visualizaciones<br/>Gráficos, KPIs, tablas<br/>interactivas]
 
 
-
+Kinesis: $11.00/mes
+S3: $2.00/mes
+Lambda: $2.00/mes
+Glue: $3.00/mes
+Athena: $1.00/mes
+QuickSight: $9.00/mes
+TOTAL: ~$28.00/mes
