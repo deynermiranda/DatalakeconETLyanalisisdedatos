@@ -1,7 +1,7 @@
-# 🌤️ AWS Data Lake: Procesamiento de Datos IoT Meteorológicos en Tiempo Real
+# 🌤️ AWS Data Lake: Procesamiento de datos IoT meteorológicos en tiempo real
 
 ## 🎯 Descripción del Proyecto
-Sistema de Data Lake completamente serverless en AWS para ingerir, procesar, transformar y analizar datos meteorológicos IoT en tiempo real. Implementa arquitectura de 3 capas (Raw/Processed/Curated) siguiendo las mejores prácticas del Well-Architected Framework.
+Sistema de Data Lake completamente serverless en AWS para ingerir, procesar, transformar (ETL) y analizar datos meteorológicos IoT en tiempo real. Implementa arquitectura de 3 capas (Raw/Processed/Curated).
 
 ## 📊 Arquitectura del Sistema
 
