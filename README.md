@@ -28,21 +28,5 @@ flowchart TD
     K --> M[🔍 Análisis con SQL<br/>Promedios, agrupaciones,<br/>detección de anomalías]
     L --> N[📱 Visualizaciones<br/>Gráficos, KPIs, tablas<br/>interactivas]
 
-    style A fill:#e1f5fe
-    style B fill:#bbdefb
-    style C fill:#90caf9
-    style D fill:#64b5f6
-    style E fill:#fff3e0
-    style F fill:#ffecb3
-    style G fill:#ffe082
-    style H fill:#ffd54f
-    style I fill:#f3e5f5
-    style J fill:#e1bee7
-    style K fill:#c8e6c9
-    style L fill:#fff8e1
-    style M fill:#b3e5fc
-    style N fill:#ffecb3
-    style O fill:#ffebee
-    style P fill:#fce4ec
-    style Q fill:#e8eaf6
-    style R fill:#e3f2fd
+
+
