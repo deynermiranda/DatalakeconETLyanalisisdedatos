@@ -27,13 +27,6 @@ flowchart TD
     
     K --> M[🔍 Análisis con SQL<br/>Promedios, agrupaciones,<br/>detección de anomalías]
     L --> N[📱 Visualizaciones<br/>Gráficos, KPIs, tablas<br/>interactivas]
-    
-    M --> O[📊 Resultados de Análisis]
-    N --> O
-    
-    O --> P[📄 Documentación Técnica<br/>10-15 páginas]
-    O --> Q[🎥 Demostración Final<br/>Video 10-15 min]
-    O --> R[🗣️ Presentación<br/>15 min + Q&A]
 
     style A fill:#e1f5fe
     style B fill:#bbdefb
