@@ -1,7 +1,27 @@
-# 🌤️ AWS Data Lake: Procesamiento de datos IoT meteorológicos en tiempo real
+#  AWS Data Lake: Procesamiento de datos IoT meteorológicos en tiempo real
 
-## 🎯 Descripción del Proyecto
+##  Descripción del Proyecto
 Sistema de Data Lake completamente serverless en AWS para ingerir, procesar, transformar (ETL) y analizar datos meteorológicos IoT en tiempo real. Implementa arquitectura de 3 capas (Raw/Processed/Curated).
+
+## Requisitos
+
+- Cuenta de AWS con permisos adecuados
+- Dispositivos IoT meteorológicos configurados
+- Conocimientos básicos de servicios AWS
+
+## Distribución de Costos Mensuales AWS
+
+| Servicio AWS | Porcentaje | Costo Mensual (USD) |
+|--------------|------------|---------------------|
+| Kinesis | 31.6% | $11.00 |
+| QuickSight | 25.9% | $9.00 |
+| Athena | 14.4% | $5.00 |
+| Glue | 8.6% | $3.00 |
+| S3 | 6.6% | $2.30 |
+| Lambda | 5.7% | $2.00 |
+| CloudWatch | 5.7% | $2.00 |
+| Otros | 1.4% | $0.50 |
+| **Total** | **100%** | **$34.80** |
 
 ## 📊 Arquitectura del Sistema
 
@@ -28,11 +48,3 @@ flowchart TD
     K --> M[🔍 Análisis con SQL<br/>Promedios, agrupaciones,<br/>detección de anomalías]
     L --> N[📱 Visualizaciones<br/>Gráficos, KPIs, tablas<br/>interactivas]
 
-
-Kinesis: $11.00/mes
-S3: $2.00/mes
-Lambda: $2.00/mes
-Glue: $3.00/mes
-Athena: $1.00/mes
-QuickSight: $9.00/mes
-TOTAL: ~$28.00/mes
